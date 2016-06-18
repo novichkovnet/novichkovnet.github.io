@@ -1,0 +1,56 @@
+<head>
+	<title>Карта мира</title>
+	<style type="text/css">
+/**
+ * Image slider with pure CSS
+ * Original version in http://demosthenes.info/blog/css
+ */
+
+.image-slider {
+	position:relative;
+	display: inline-block;
+	line-height: 0;
+}
+
+/* Could use a pseudo-element, but they’re currently
+   super buggy. See: http://dabblet.com/gist/ab432c3f6a8f672cd077 */
+.image-slider > div {
+	position: absolute;
+	top: 0; bottom: 0; left: 0;
+	width: 25px;
+	max-width: 100%;
+	overflow: hidden;
+	resize: horizontal;
+}
+
+/* Cross-browser resizer styling */
+.image-slider > div:before {
+	content: '';
+	position: absolute;
+	right: 0; bottom: 0;
+	width: 13px; height: 13px;
+	padding: 5px;
+	background: linear-gradient(-45deg, white 50%, transparent 0);
+	background-clip: content-box;
+	cursor: ew-resize;
+	-webkit-filter: drop-shadow(0 0 2px black);
+	filter: drop-shadow(0 0 2px black);
+}
+
+.image-slider img {
+	user-select: none;
+	max-width: 1440px;
+}
+	</style>
+</head>
+<body>
+<H3>Человечество и климат</H3>
+<h5>Сравнение плотности населения Земли и средней температуры воздуха</h5>
+	<div class="image-slider">
+		<div><img src="http://neo.sci.gsfc.nasa.gov/servlet/RenderData?si=875430&cs=rgb&format=PNG&width=1440&height=720" />
+		</div>
+	<img src="http://neo.sci.gsfc.nasa.gov/servlet/RenderData?si=1221909&cs=rgb&format=JPEG&width=1440&height=720" />
+	</div>
+<p>Вот здесь в уголке тяните за слайдер</p>
+<p>Данные НАСА</p>
+</body>
