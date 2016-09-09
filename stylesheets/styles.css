@@ -1,68 +1,143 @@
-@font-face {
-  font-family: 'Noto Sans';
-  font-weight: 400;
-  font-style: normal;
-  src: url('../fonts/Noto-Sans-regular/Noto-Sans-regular.eot');
-  src: url('../fonts/Noto-Sans-regular/Noto-Sans-regular.eot?#iefix') format('embedded-opentype'),
-       local('Noto Sans'),
-       local('Noto-Sans-regular'),
-       url('../fonts/Noto-Sans-regular/Noto-Sans-regular.woff2') format('woff2'),
-       url('../fonts/Noto-Sans-regular/Noto-Sans-regular.woff') format('woff'),
-       url('../fonts/Noto-Sans-regular/Noto-Sans-regular.ttf') format('truetype'),
-       url('../fonts/Noto-Sans-regular/Noto-Sans-regular.svg#NotoSans') format('svg');
-}
+/**
+ * @license
+ * MyFonts Webfont Build ID 3280799, 2016-09-09T09:38:21-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: GloberBlack by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/glober/black/
+ * 
+ * Webfont: GloberBook by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/glober/book/
+ * 
+ * Webfont: GloberBold by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/glober/bold/
+ * 
+ * Webfont: GloberBoldItalic by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/glober/bold-italic/
+ * 
+ * Webfont: GloberBlackItalic by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/glober/black-italic/
+ * 
+ * Webfont: GloberBookItalic by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/glober/book-italic/
+ * 
+ * Webfont: GloberHeavy by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/glober/heavy/
+ * 
+ * Webfont: GloberHeavyItalic by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/glober/heavy-italic/
+ * 
+ * Webfont: GloberLight by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/glober/light/
+ * 
+ * Webfont: GloberRegular by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/glober/regular/
+ * 
+ * Webfont: GloberLightItalic by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/glober/light-italic/
+ * 
+ * Webfont: GloberRegularItalic by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/glober/regular-italic/
+ * 
+ * Webfont: GloberSemiBold by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/glober/semi-bold/
+ * 
+ * Webfont: GloberSemiBoldItalic by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/glober/semi-bold-italic/
+ * 
+ * Webfont: GloberThin by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/glober/thin/
+ * 
+ * Webfont: GloberThinItalic by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/glober/thin-italic/
+ * 
+ * Webfont: GloberxBoldItalic by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/glober/extra-bold-italic/
+ * 
+ * Webfont: GloberxBold by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/glober/extra-bold/
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=3280799
+ * Licensed pageviews: 10,000
+ * Webfonts copyright: Copyright (c) 2014 by Fontfabric LLC. All rights reserved.
+ * 
+ * © 2016 MyFonts Inc
+*/
 
-@font-face {
-  font-family: 'Noto Sans';
-  font-weight: 700;
-  font-style: normal;
-  src: url('../fonts/Noto-Sans-700/Noto-Sans-700.eot');
-  src: url('../fonts/Noto-Sans-700/Noto-Sans-700.eot?#iefix') format('embedded-opentype'),
-       local('Noto Sans Bold'),
-       local('Noto-Sans-700'),
-       url('../fonts/Noto-Sans-700/Noto-Sans-700.woff2') format('woff2'),
-       url('../fonts/Noto-Sans-700/Noto-Sans-700.woff') format('woff'),
-       url('../fonts/Noto-Sans-700/Noto-Sans-700.ttf') format('truetype'),
-       url('../fonts/Noto-Sans-700/Noto-Sans-700.svg#NotoSans') format('svg');
-}
 
-@font-face {
-  font-family: 'Noto Sans';
-  font-weight: 400;
-  font-style: italic;
-  src: url('../fonts/Noto-Sans-italic/Noto-Sans-italic.eot');
-  src: url('../fonts/Noto-Sans-italic/Noto-Sans-italic.eot?#iefix') format('embedded-opentype'),
-       local('Noto Sans Italic'),
-       local('Noto-Sans-italic'),
-       url('../fonts/Noto-Sans-italic/Noto-Sans-italic.woff2') format('woff2'),
-       url('../fonts/Noto-Sans-italic/Noto-Sans-italic.woff') format('woff'),
-       url('../fonts/Noto-Sans-italic/Noto-Sans-italic.ttf') format('truetype'),
-       url('../fonts/Noto-Sans-italic/Noto-Sans-italic.svg#NotoSans') format('svg');
-}
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/320f9f");
 
-@font-face {
-  font-family: 'Noto Sans';
-  font-weight: 700;
-  font-style: italic;
-  src: url('../fonts/Noto-Sans-700italic/Noto-Sans-700italic.eot');
-  src: url('../fonts/Noto-Sans-700italic/Noto-Sans-700italic.eot?#iefix') format('embedded-opentype'),
-       local('Noto Sans Bold Italic'),
-       local('Noto-Sans-700italic'),
-       url('../fonts/Noto-Sans-700italic/Noto-Sans-700italic.woff2') format('woff2'),
-       url('../fonts/Noto-Sans-700italic/Noto-Sans-700italic.woff') format('woff'),
-       url('../fonts/Noto-Sans-700italic/Noto-Sans-700italic.ttf') format('truetype'),
-       url('../fonts/Noto-Sans-700italic/Noto-Sans-700italic.svg#NotoSans') format('svg');
-}
-
+  
+@font-face {font-family: 'GloberBlack';src: url('webfonts/320F9F_0_0.eot');src: url('webfonts/320F9F_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/320F9F_0_0.woff2') format('woff2'),url('webfonts/320F9F_0_0.woff') format('woff'),url('webfonts/320F9F_0_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'GloberBook';src: url('webfonts/320F9F_1_0.eot');src: url('webfonts/320F9F_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/320F9F_1_0.woff2') format('woff2'),url('webfonts/320F9F_1_0.woff') format('woff'),url('webfonts/320F9F_1_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'GloberBold';src: url('webfonts/320F9F_2_0.eot');src: url('webfonts/320F9F_2_0.eot?#iefix') format('embedded-opentype'),url('webfonts/320F9F_2_0.woff2') format('woff2'),url('webfonts/320F9F_2_0.woff') format('woff'),url('webfonts/320F9F_2_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'GloberBoldItalic';src: url('webfonts/320F9F_3_0.eot');src: url('webfonts/320F9F_3_0.eot?#iefix') format('embedded-opentype'),url('webfonts/320F9F_3_0.woff2') format('woff2'),url('webfonts/320F9F_3_0.woff') format('woff'),url('webfonts/320F9F_3_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'GloberBlackItalic';src: url('webfonts/320F9F_4_0.eot');src: url('webfonts/320F9F_4_0.eot?#iefix') format('embedded-opentype'),url('webfonts/320F9F_4_0.woff2') format('woff2'),url('webfonts/320F9F_4_0.woff') format('woff'),url('webfonts/320F9F_4_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'GloberBookItalic';src: url('webfonts/320F9F_5_0.eot');src: url('webfonts/320F9F_5_0.eot?#iefix') format('embedded-opentype'),url('webfonts/320F9F_5_0.woff2') format('woff2'),url('webfonts/320F9F_5_0.woff') format('woff'),url('webfonts/320F9F_5_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'GloberHeavy';src: url('webfonts/320F9F_6_0.eot');src: url('webfonts/320F9F_6_0.eot?#iefix') format('embedded-opentype'),url('webfonts/320F9F_6_0.woff2') format('woff2'),url('webfonts/320F9F_6_0.woff') format('woff'),url('webfonts/320F9F_6_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'GloberHeavyItalic';src: url('webfonts/320F9F_7_0.eot');src: url('webfonts/320F9F_7_0.eot?#iefix') format('embedded-opentype'),url('webfonts/320F9F_7_0.woff2') format('woff2'),url('webfonts/320F9F_7_0.woff') format('woff'),url('webfonts/320F9F_7_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'GloberLight';src: url('webfonts/320F9F_8_0.eot');src: url('webfonts/320F9F_8_0.eot?#iefix') format('embedded-opentype'),url('webfonts/320F9F_8_0.woff2') format('woff2'),url('webfonts/320F9F_8_0.woff') format('woff'),url('webfonts/320F9F_8_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'GloberRegular';src: url('webfonts/320F9F_9_0.eot');src: url('webfonts/320F9F_9_0.eot?#iefix') format('embedded-opentype'),url('webfonts/320F9F_9_0.woff2') format('woff2'),url('webfonts/320F9F_9_0.woff') format('woff'),url('webfonts/320F9F_9_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'GloberLightItalic';src: url('webfonts/320F9F_A_0.eot');src: url('webfonts/320F9F_A_0.eot?#iefix') format('embedded-opentype'),url('webfonts/320F9F_A_0.woff2') format('woff2'),url('webfonts/320F9F_A_0.woff') format('woff'),url('webfonts/320F9F_A_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'GloberRegularItalic';src: url('webfonts/320F9F_B_0.eot');src: url('webfonts/320F9F_B_0.eot?#iefix') format('embedded-opentype'),url('webfonts/320F9F_B_0.woff2') format('woff2'),url('webfonts/320F9F_B_0.woff') format('woff'),url('webfonts/320F9F_B_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'GloberSemiBold';src: url('webfonts/320F9F_C_0.eot');src: url('webfonts/320F9F_C_0.eot?#iefix') format('embedded-opentype'),url('webfonts/320F9F_C_0.woff2') format('woff2'),url('webfonts/320F9F_C_0.woff') format('woff'),url('webfonts/320F9F_C_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'GloberSemiBoldItalic';src: url('webfonts/320F9F_D_0.eot');src: url('webfonts/320F9F_D_0.eot?#iefix') format('embedded-opentype'),url('webfonts/320F9F_D_0.woff2') format('woff2'),url('webfonts/320F9F_D_0.woff') format('woff'),url('webfonts/320F9F_D_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'GloberThin';src: url('webfonts/320F9F_E_0.eot');src: url('webfonts/320F9F_E_0.eot?#iefix') format('embedded-opentype'),url('webfonts/320F9F_E_0.woff2') format('woff2'),url('webfonts/320F9F_E_0.woff') format('woff'),url('webfonts/320F9F_E_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'GloberThinItalic';src: url('webfonts/320F9F_F_0.eot');src: url('webfonts/320F9F_F_0.eot?#iefix') format('embedded-opentype'),url('webfonts/320F9F_F_0.woff2') format('woff2'),url('webfonts/320F9F_F_0.woff') format('woff'),url('webfonts/320F9F_F_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'GloberxBoldItalic';src: url('webfonts/320F9F_10_0.eot');src: url('webfonts/320F9F_10_0.eot?#iefix') format('embedded-opentype'),url('webfonts/320F9F_10_0.woff2') format('woff2'),url('webfonts/320F9F_10_0.woff') format('woff'),url('webfonts/320F9F_10_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'GloberxBold';src: url('webfonts/320F9F_11_0.eot');src: url('webfonts/320F9F_11_0.eot?#iefix') format('embedded-opentype'),url('webfonts/320F9F_11_0.woff2') format('woff2'),url('webfonts/320F9F_11_0.woff') format('woff'),url('webfonts/320F9F_11_0.ttf') format('truetype');}
+ 
 body {
   background-color: #fff;
   padding:50px;
-  font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 16px/1.5 "GloberBook", Verdana, sans-serif;
   color:#727272;
   font-weight:400;
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font: 19px/1.5 "GloberHeavy", Verdana, sans-serif;
   color:#222;
   margin:0 0 20px;
 }
