@@ -1,0 +1,87 @@
+body {
+  font-family: "Proxima Nova", sans-serif;
+  font-size: 1.4vw;
+  padding: 7vw;
+  background-color: #fafaf5;
+}
+
+div {
+  font-size: 100%;
+}
+
+#logo {
+  position: absolute;
+  width: 5em;
+  height: 5em;
+  top: 0em;
+  right: 5em;
+}
+
+h1 {
+  font-size: 200%;
+  line-height: 100%;
+  margin: 0%;
+  display: block;
+  width: 24em;
+  margin-bottom:0.25em;
+}
+
+p.lead {
+  font-size: 1.5em;
+  line-height: 1.3em;
+  margin-top: 0em;
+  margin-bottom: 0.75em;
+}
+
+p.legend {
+  color: #ccc;
+  font-size: 100%;
+}
+
+#chart {
+  min-height: 10em;
+  margin-bottom: 4em;
+}
+
+
+/*
+H_BARCHART
+*/
+
+.item {
+  font-size: 150%;
+  display: block;
+  float: left;
+  width: 100%;
+  color: #333;
+  padding-top: 0.75em;
+  position: relative;
+}
+
+.item .bc_label, .item .bc_number {
+  margin-bottom: 0.25em;
+  display: block;
+}
+
+.item .bc_label {
+  bottom: 0.3em;
+  left: 0em;
+  width: 75%;
+}
+
+.item .bc_number {
+  position: absolute;
+  bottom: 0.3em;
+  right: 0px;
+}
+
+.item .bar_container {
+  height: 0.2em;
+  clear: both;
+  background-color: #ddd;
+}
+
+.bar_container .the_bar {
+  background-color: #3399ff;
+  height: 0.2em;
+}
