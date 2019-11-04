@@ -21,7 +21,7 @@
 title: Клуб независимой инфографики
 email: novichkov.net@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Вы поали на блог, где в экспериментальном режиме ведутся размышления о применении открытого программного обесечения в современной инфографике и визуализации данных
+  Блог, где в экспериментальном режиме ведутся размышления о применении открытого программного обесечения в современной инфографике и визуализации данных.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: novichkovnet
