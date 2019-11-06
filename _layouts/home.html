@@ -14,8 +14,27 @@ layout: default
     <ul class="post-list">
       {%- for post in site.posts -%}
       <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        <!-- {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%} -->
+        <span class="post-meta">
+          <!-- {{ post.date | date: date_format }} -->
+          {% assign m = post.date | date: "%-m" %}
+          {{ post.date | date: "%-d" }}
+          {% case m %}
+            {% when '1' %}Января
+            {% when '2' %}Февраля
+            {% when '3' %}Марта
+            {% when '4' %}Апреля
+            {% when '5' %}Мая
+            {% when '6' %}Июня
+            {% when '7' %}Июля
+            {% when '8' %}Августа
+            {% when '9' %}Сентября
+            {% when '10' %}Октября
+            {% when '11' %}Ноября
+            {% when '12' %}Декабря
+          {% endcase %}
+          {{ post.date | date: "%Y" }}
+        </span>
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
