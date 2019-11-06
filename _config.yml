@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Инфографика — каждый день!
+title: Инфографика для всех!
 email: novichkov.net@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Данный блог ведётся для регулярных записей посвящённых инфографике и визуализации данных. Публикации содержат экспериментальную и спорную информацию. Покупайте наших слонов!
