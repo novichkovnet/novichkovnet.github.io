@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
 ul, ol, dl, figure,
 %vertical-rhythm {
-  margin-bottom: $spacing-unit / 2;
+  margin-bottom: $spacing-unit;
 }
 
 
@@ -149,6 +149,7 @@ blockquote {
 pre,
 code {
   @include relative-font-size(0.9375);
+  font-family: 'PT Mono', monospace;
   border: 1px solid $grey-color-light;
   border-radius: 3px;
   background-color: #eef;
@@ -219,7 +220,7 @@ pre {
 
 .social-media-list {
   li + li {
-    padding-top: 5px;
+    padding-top: 0px;
   }
 }
 
@@ -252,3 +253,4 @@ table {
     border: 1px solid $grey-color-light;
   }
 }
+
