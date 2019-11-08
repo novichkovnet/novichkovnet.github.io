@@ -2,8 +2,8 @@
 layout: post
 title:  Человек видит мир
 date:   2018-05-17 10:00:00 +0300
-categories: [статья]
-tags: [тренды, технологии, коммуникации]
+categories: [text]
+tags: [trend, tech, communication]
 author: Алексей Новичков
 ---
 
