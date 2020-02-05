@@ -1,6 +1,6 @@
 ﻿---
 layout: post
-title:  Как развивались визуальные коммуникации и&nbsp;что нас ждёт в&nbsp;будущем
+title:  Визуальные коммуникации
 date:   2018-05-17 10:00:00 +0300
 categories: [text]
 tags: [trend, tech, communication]
