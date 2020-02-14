@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Google Colab для совместной работы в Python
+title:  Google Colab для работы с Python
 date:   2020-02-10 10:00:00 +0300
 categories: [code]
 tags: [data, visualization, python, google]
