@@ -82,6 +82,7 @@ function draw() {
    line(map(b, 0, 10, 15, window_weight-16), 155, map(b, 0, 10, 15, window_weight-16), window_height - 256); // b line
 
    strokeWeight(.25);
+   textStyle(NORMAL);
    sigmaGrid (mu, sigma, window_weight, window_height)
    
    
