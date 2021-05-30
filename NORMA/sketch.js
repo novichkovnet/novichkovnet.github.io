@@ -92,7 +92,7 @@ function draw() {
     //Typography
     noStroke();
     fill('#000000');
-    textFont('Arial');
+    textFont('Tahoma');
     textStyle(BOLD);
     
     textAlign(LEFT);
@@ -105,7 +105,7 @@ function draw() {
     text('Probability', 16, window_height-90);
 
     textSize(12);
-    text('© YandexPracticum',16, window_height-24);
+    text('© Yandex Practicum. practicum.yandex.com. 2021',16, window_height-24);
 
     // nums on graph
     
@@ -237,7 +237,7 @@ function sigmaGrid (mu, sigma, window_weight, window_height) {
 
         if (round(i, 2) != mu) {
             line( map(i, 0, 10, 15, window_weight-16), window_height - 240, map(i, 0, 10, 15, window_weight-16), 162);
-            textFont('Arial');
+            textFont('Tahoma');
             textSize(12);
             textAlign(CENTER);
             fill('black')
