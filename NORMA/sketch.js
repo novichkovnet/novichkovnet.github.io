@@ -93,7 +93,7 @@ function draw() {
     noStroke();
     fill('#000000');
     textFont('Tahoma');
-    textStyle(BOLD);
+    textStyle(NORMAL);
     
     textAlign(LEFT);
     
@@ -104,8 +104,11 @@ function draw() {
     text('Z-score calculations', 16, window_height-184);
     text('Probability', 16, window_height-90);
 
-    textSize(12);
-    text('© Yandex Practicum. practicum.yandex.com. 2021',16, window_height-24);
+    textFont('Verdana');
+    textSize(10);
+    textStyle(NORMAL);
+    text('© PRACTICUM.YANDEX.COM. 2021',16, window_height-24);
+
 
     // nums on graph
     
@@ -121,6 +124,7 @@ function draw() {
     // slider texts
 
     textFont('Times New Roman');
+    textStyle(ITALIC);
     textAlign(LEFT);
     textSize(20);
     text('μ', 16, 76);
@@ -129,6 +133,8 @@ function draw() {
     textSize(22);
     text('a', 164, 77);
     text('b', 164, 101);
+
+    textStyle(NORMAL);
 
     textSize(16);
     text(mu, 120, 77);
@@ -143,6 +149,8 @@ function draw() {
     // formulas
 
     textFont('Times New Roman');
+    fill(70,70,70);
+    textStyle(ITALIC);
 
     text('z(a) = z(' + a + ') = (a - μ) / σ = (' + a + ' - ' + mu + ') / ' + sigma + ' = ' + round((a-mu)/sigma,2), 16,window_height - 157);
     text('z(b) = z(' + b + ') = (b - μ) / σ = (' + b + ' - ' + mu + ') / ' + sigma + ' = ' + round((b-mu)/sigma,2), 16,window_height - 130);
