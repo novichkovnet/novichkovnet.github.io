@@ -10,7 +10,7 @@ function setup() {
     sliderMu.position(32, 69);
     sliderMu.addClass('mySliders');
 
-    sliderSigma = createSlider(sigmaMax/2, sigmaMax, sigmaMax/2, 0.1);
+    sliderSigma = createSlider(2, 10, 2, 0.1);
     sliderSigma.position(32, 93);
     sliderSigma.addClass('mySliders');
 
