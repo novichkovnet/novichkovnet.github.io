@@ -4,10 +4,6 @@ let zScoreList =[];
 let zScoreMax = 10;
 let sigmaMax = 4;
 
-function preload() {
-    zImage = loadImage('/images/formula.png');
-}
-
 function setup() {
     //Sliders
     sliderMu = createSlider(0, zScoreMax, zScoreMax/2, 0.1);
@@ -114,6 +110,7 @@ function draw() {
     // nums on graph
     
     textSize(14);
+    textStyle(NORMAL);
     text('density = ' + round(densityNorma, 2), 16, map(densityNorma, 0, .2,  window_height - 256, 160) + 18); // density on graph
     textAlign(CENTER);
     textStyle(NORMAL);
