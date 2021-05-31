@@ -6,19 +6,19 @@ let sigmaMax = 4;
 
 function setup() {
     //Sliders
-    sliderMu = createSlider(0, zScoreMax, zScoreMax/2, 0.1);
+    sliderMu = createSlider(0, zScoreMax, zScoreMax/2, 0.01);
     sliderMu.position(32, 69);
     sliderMu.addClass('mySliders');
 
-    sliderSigma = createSlider(sigmaMax/2, sigmaMax, sigmaMax/2, 0.1);
+    sliderSigma = createSlider(sigmaMax/2, sigmaMax, sigmaMax/2, 0.01);
     sliderSigma.position(32, 93);
     sliderSigma.addClass('mySliders');
 
-    slidera = createSlider(0, zScoreMax, 2, 0.1);
+    slidera = createSlider(0, zScoreMax, 2, 0.01);
     slidera.position(180, 69);
     slidera.addClass('mySliders');
 
-    sliderb = createSlider(0, zScoreMax, 8, 0.1);
+    sliderb = createSlider(0, zScoreMax, 8, 0.01);
     sliderb.position(180, 93);
     sliderb.addClass('mySliders');
 }
@@ -149,19 +149,19 @@ function draw() {
 
     let p1 = 0;
     
-    for (i  = mu - sigma*5; i <= a; i = i + .1) {
+    for (i  = mu - sigma*5; i <= a; i = i + .001) {
         p = normalCalc(sigma, mu, i)*.1;
         p1 = p1 + p;
     }
 
     let p2 = 0;
 
-    for (i  = mu - sigma*5; i <= b; i = i + .1) {
+    for (i  = mu - sigma*5; i <= b; i = i + .001) {
         p = normalCalc(sigma, mu, i)*.1;
         p2 = p2 + p;
     }
 
-    text('P = P(b) - P(a)= ' + round(p2,3) + ' - ' + round(p1,3) + ' = ' + round((p2 - p1),3), 16,window_height - 60);
+    text('P = P(b) - P(a)= ' + round(p2/100,4) + ' - ' + round(p1/100,4) + ' = ' + round((p2/100 - p1/100),4), 16,window_height - 60);
 
 }
 
@@ -241,7 +241,7 @@ function sigmaGrid (mu, sigma, window_weight, window_height) {
             textSize(12);
             textAlign(CENTER);
             fill('black')
-            text(str(abs(x)) + 'σ=' + round(i, 2), map(i, 0, 10, 15, window_weight-16), window_height - 240 + 18);
+            text(str(x) + 'σ=' + round(i, 2), map(i, 0, 10, 15, window_weight-16), window_height - 240 + 18);
         }
 
         x = x + 1;
