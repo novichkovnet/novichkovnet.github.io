@@ -136,6 +136,8 @@ function draw() {
 
     // slider ab nums
 
+    //text
+
     textSize(16);
     text(a, 268, 77); //a mum slider
     text(b, 268, 101); // b num slider
