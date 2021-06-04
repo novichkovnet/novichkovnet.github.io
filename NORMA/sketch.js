@@ -5,6 +5,8 @@ let zScoreMax = 10;
 let sigmaMax = 4;
 
 function setup() {
+    background('white');
+
     //Sliders
     sliderMu = createSlider(0, zScoreMax, zScoreMax/2, 0.01);
     sliderMu.position(32, 69);
@@ -30,8 +32,8 @@ function draw() {
     
     createCanvas(window_weight, window_height); // redraw canvas with window sizes
     
-    
-    background('#E9E9E9'); // reset background
+    fill('#E6E6E5');
+    rect(0, 0, window_weight, window_height, 16);
 
     //Grid System
     //gridSystem(window_weight, window_height); // add grid systen in to the canvas
