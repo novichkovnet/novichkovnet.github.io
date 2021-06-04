@@ -2,7 +2,12 @@ let sliderMu, sliderSigma;
 let zScoreSize = 200;
 let zScoreList =[];
 let zScoreMax = 10;
+let sigmaMin = 1;
 let sigmaMax = 4;
+
+function preload() {
+    SuisseIntl = loadFont('font/SuisseIntl-Regular.otf');
+  }
 
 function setup() {
     background('white');
@@ -12,15 +17,15 @@ function setup() {
     sliderMu.position(32, 69);
     sliderMu.addClass('mySliders');
 
-    sliderSigma = createSlider(sigmaMax/2, sigmaMax, sigmaMax/2, 0.01);
+    sliderSigma = createSlider(sigmaMin, sigmaMax, sigmaMin, 0.01);
     sliderSigma.position(32, 93);
     sliderSigma.addClass('mySliders');
 
-    slidera = createSlider(0, zScoreMax, 2, 0.01);
+    slidera = createSlider(0, zScoreMax, 3, 0.01);
     slidera.position(180, 69);
     slidera.addClass('mySliders');
 
-    sliderb = createSlider(0, zScoreMax, 8, 0.01);
+    sliderb = createSlider(0, zScoreMax, 7, 0.01);
     sliderb.position(180, 93);
     sliderb.addClass('mySliders');
 }
@@ -78,7 +83,7 @@ function draw() {
    
    //Basic strokes
    
-   line(16,map(densityNorma, 0, .2,  window_height - 256, 160), window_weight - 16, map(densityNorma, 0, .2,  window_height - 256, 160)); // top line
+   line(16,map(densityNorma, 0, .4,  window_height - 256, 160), window_weight - 16, map(densityNorma, 0, .4,  window_height - 256, 160)); // top line
    line(map(mu, 0, 10, 15, window_weight-16), 130, map(mu, 0, 10, 15, window_weight-16), window_height - 256); // center line
    line(map(a, 0, 10, 15, window_weight-16), 155, map(a, 0, 10, 15, window_weight-16), window_height - 256); // a line
    line(map(b, 0, 10, 15, window_weight-16), 155, map(b, 0, 10, 15, window_weight-16), window_height - 256); // b line
@@ -94,7 +99,7 @@ function draw() {
     //Typography
     noStroke();
     fill('#000000');
-    textFont('Arial');
+    textFont(SuisseIntl);
     textStyle(BOLD);
     
     textAlign(LEFT);
@@ -122,25 +127,22 @@ function draw() {
     
     // slider texts
 
-    textFont('Times New Roman');
+    textFont('Arial');
     textAlign(LEFT);
-    textSize(20);
+    textSize(18);
     text('μ', 16, 76);
     text('σ', 16, 100);
     
-    textSize(22);
     text('a', 164, 77);
     text('b', 164, 101);
 
-    textSize(16);
+    textSize(17);
+    
     text(mu, 120, 77);
     text(sigma, 120, 101);
 
-    // slider ab nums
-
     //text
 
-    textSize(16);
     text(a, 268, 77); //a mum slider
     text(b, 268, 101); // b num slider
 
@@ -224,7 +226,7 @@ function viz1 (mu, sigma, zScoreSize, window_weight, window_height, start, end,)
         zScore = map(i, 0, zScoreSize, start, end);
         density = normalCalc(sigma, mu, zScore);
         let x = map(zScore, 0, 10, 15, window_weight-16);
-        let y = map(density, 0, .2,  window_height - 256, 160);
+        let y = map(density, 0, .4,  window_height - 256, 160);
         vertex(x, y);
     }
 
@@ -235,17 +237,22 @@ function viz1 (mu, sigma, zScoreSize, window_weight, window_height, start, end,)
 
 function sigmaGrid (mu, sigma, window_weight, window_height) {
 
-    x = -5;
+    x = -10;
 
-    for(i = mu - sigma*5; i <= mu + sigma*5; i = i + sigma){
+    for(i = mu - sigma*10; i <= mu + sigma*10; i = i + sigma){
 
         if (round(i, 2) != mu) {
             line( map(i, 0, 10, 15, window_weight-16), window_height - 240, map(i, 0, 10, 15, window_weight-16), 162);
             textFont('Arial');
-            textSize(12);
+            textSize(11);
             textAlign(CENTER);
-            fill('black')
-            text(str(x) + 'σ=' + round(i, 2), map(i, 0, 10, 15, window_weight-16), window_height - 240 + 18);
+            fill('gray');
+            if (window_weight >= 700) {
+                text(str(x) + 'σ = ' + round(i, 2), map(i, 0, 10, 15, window_weight-16), window_height - 240 + 18);
+            } else {
+                text(str(x) + 'σ', map(i, 0, 10, 15, window_weight-16), window_height - 240 + 18);
+            }
+           
         }
 
         x = x + 1;
