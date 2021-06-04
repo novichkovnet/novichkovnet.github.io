@@ -6,7 +6,7 @@ let sigmaMin = 1;
 let sigmaMax = 4;
 
 function preload() {
-    SuisseIntl = loadFont('font/SuisseIntl-Regular.otf');
+    SuisseIntl = loadFont('font/SuisseIntl-SemiBold.otf');
   }
 
 function setup() {
@@ -104,10 +104,10 @@ function draw() {
     
     textAlign(LEFT);
     
-    textSize(30);
+    textSize(24);
     text('Normal distribution', 16, 40);
     
-    textSize(15);
+    textSize(18);
     text('Z-score calculations', 16, window_height-184);
     text('Probability', 16, window_height-90);
 
@@ -115,6 +115,8 @@ function draw() {
     text('© YandexPracticum',16, window_height-24);
 
     // nums on graph
+
+    textFont('Arial');
     
     textSize(14);
     textStyle(NORMAL);
@@ -127,7 +129,7 @@ function draw() {
     
     // slider texts
 
-    textFont('Arial');
+    
     textAlign(LEFT);
     textSize(18);
     text('μ', 16, 76);
