@@ -133,7 +133,7 @@ function draw() {
 
     tex = createP();
     tex.style('font-size', '20px');
-    tex.position(135, 165);
+    tex.position(0, 0);
     katex.render('\\nabla^{2}\\Phi=\\sigma(x'+100+')', tex.elt);
     
     textFont(KaTextIt);
