@@ -7,6 +7,8 @@ let sigmaMax = 4;
 
 function preload() {
     SuisseIntl = loadFont('font/SuisseIntl-SemiBold.otf');
+    KaTextReg = loadFont('font/KaTeX_Main-Regular.ttf');
+    KaTextIt = loadFont('font/KaTeX_Main-Italic.ttf');
   }
 
 function setup() {
@@ -129,7 +131,12 @@ function draw() {
     
     // slider texts
 
+    tex = createP();
+    tex.style('font-size', '20px');
+    tex.position(135, 165);
+    katex.render('\\nabla^{2}\\Phi=\\sigma(x'+100+')', tex.elt);
     
+    textFont(KaTextIt);
     textAlign(LEFT);
     textSize(18);
     text('μ', 16, 76);
