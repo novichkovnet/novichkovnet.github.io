@@ -1,14 +1,14 @@
 let sliderMu, sliderSigma;
 let zScoreSize = 200;
 let zScoreList =[];
-let zScoreMax = 10;
+let zScoreMax = 9.99;
 let sigmaMin = 1;
 let sigmaMax = 4;
 
 function preload() {
     SuisseIntl = loadFont('font/SuisseIntl-SemiBold.otf');
-    KaTextReg = loadFont('font/KaTeX_Main-Regular.ttf');
-    KaTextIt = loadFont('font/KaTeX_Main-Italic.ttf');
+    KatexReg = loadFont('font/KaTeX_Main-Regular.ttf');
+    KatexIt = loadFont('font/KaTeX_Main-Italic.ttf');
   }
 
 function setup() {
@@ -122,7 +122,7 @@ function draw() {
     
     textSize(14);
     textStyle(NORMAL);
-    text('density = ' + round(densityNorma, 2), 16, map(densityNorma, 0, .2,  window_height - 256, 160) + 18); // density on graph
+    text('density = ' + round(densityNorma, 2), 16, map(densityNorma, 0, .4,  window_height - 256, 160) + 18); // density on graph
     textAlign(CENTER);
     textStyle(NORMAL);
     text('μ = ' + mu, map(mu, 0, 10, 15, window_weight-16), 125); //mu num on graph
@@ -130,13 +130,8 @@ function draw() {
     text('b = ' + b, map(b, 0, 10, 15, window_weight-16), 145); //a num on graph
     
     // slider texts
-
-    tex = createP();
-    tex.style('font-size', '20px');
-    tex.position(0, 0);
-    katex.render('\\nabla^{2}\\Phi=\\sigma(x'+100+')', tex.elt);
     
-    textFont(KaTextIt);
+    textFont('Arial');
     textAlign(LEFT);
     textSize(18);
     text('μ', 16, 76);
@@ -158,6 +153,8 @@ function draw() {
     // formulas
 
     textFont('Times New Roman');
+
+    // formulas
 
     text('z(a) = z(' + a + ') = (a - μ) / σ = (' + a + ' - ' + mu + ') / ' + sigma + ' = ' + round((a-mu)/sigma,2), 16,window_height - 157);
     text('z(b) = z(' + b + ') = (b - μ) / σ = (' + b + ' - ' + mu + ') / ' + sigma + ' = ' + round((b-mu)/sigma,2), 16,window_height - 130);
