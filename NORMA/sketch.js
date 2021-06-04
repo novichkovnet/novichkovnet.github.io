@@ -1,7 +1,7 @@
 let sliderMu, sliderSigma;
 let zScoreSize = 200;
 let zScoreList =[];
-let zScoreMax = 9.99;
+let zScoreMax = 10;
 let sigmaMin = 1;
 let sigmaMax = 4;
 
