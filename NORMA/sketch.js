@@ -4,11 +4,16 @@ let zScoreList =[];
 let zScoreMax = 10;
 let sigmaMin = 1;
 let sigmaMax = 4;
+let BackgroundColor = 'white';
+let BorderColor = '#D9D9D9';
+let GraphColor = '#F5DE68';
+let ProbColorPoz = '#1BB047';
+let ProbColorNeg = '#000000';
 
 function preload() {
-    SuisseIntl = loadFont('font/SuisseIntl-SemiBold.otf');
-    KatexReg = loadFont('font/KaTeX_Main-Regular.ttf');
-    KatexIt = loadFont('font/KaTeX_Main-Italic.ttf');
+    SuisseIntlB = loadFont('font/SuisseIntl-SemiBold.otf');
+    SuisseIntlR = loadFont('font/SuisseIntl-Regular.otf');
+    KatexMath = loadFont('font/KaTeX_Math-Italic.ttf');
   }
 
 function setup() {
@@ -39,7 +44,9 @@ function draw() {
     
     createCanvas(window_weight, window_height); // redraw canvas with window sizes
     
-    fill('#E6E6E5');
+    fill(BackgroundColor);
+    stroke(BorderColor);
+    strokeWeight(1);
     rect(0, 0, window_weight, window_height, 16);
 
     //Grid System
@@ -48,6 +55,7 @@ function draw() {
     //Calculation
     let mu = sliderMu.value();
     let sigma = sliderSigma.value();
+    
     let a = slidera.value();
     let b = sliderb.value();
 
@@ -55,14 +63,26 @@ function draw() {
     let coordinatesList =[16,window_height - 256];
     
     //Visualization
-    fill('white');
+
+    //noFill();
+    //noStroke();
+
+    sigmaGrid (mu, sigma, window_weight, window_height);
+
+    fill(GraphColor);
     
     start = mu - sigma*5;
     end = mu + sigma*5;
 
     viz1 (mu, sigma, zScoreSize, window_weight, window_height, start, end);
 
-    fill('gray');
+    if (b > a) {
+        fill(ProbColorPoz);
+        
+    } else {
+        fill(ProbColorNeg);
+    }
+    
     noStroke();
     start = a;
     end = b;
@@ -70,13 +90,14 @@ function draw() {
     viz1 (mu, sigma, zScoreSize, window_weight, window_height, start, end);
 
     noFill();
-    stroke('black');
-    strokeWeight(2);
+    //stroke('black');
+    //strokeWeight(2);
     
     start = mu - sigma*5;
     end = mu + sigma*5;
 
     viz1 (mu, sigma, zScoreSize, window_weight, window_height, start, end);
+
 
    //Graphic
 
@@ -85,23 +106,24 @@ function draw() {
    
    //Basic strokes
    
-   line(16,map(densityNorma, 0, .4,  window_height - 256, 160), window_weight - 16, map(densityNorma, 0, .4,  window_height - 256, 160)); // top line
-   line(map(mu, 0, 10, 15, window_weight-16), 130, map(mu, 0, 10, 15, window_weight-16), window_height - 256); // center line
-   line(map(a, 0, 10, 15, window_weight-16), 155, map(a, 0, 10, 15, window_weight-16), window_height - 256); // a line
-   line(map(b, 0, 10, 15, window_weight-16), 155, map(b, 0, 10, 15, window_weight-16), window_height - 256); // b line
+   line(16,map(densityNorma, 0, .4,  window_height - 16*15, 160), window_weight - 16, map(densityNorma, 0, .4,  window_height - 16*15, 160)); // top line
+   line(map(mu, 0, 10, 15, window_weight-16), 130, map(mu, 0, 10, 15, window_weight-16), window_height - 16*15); // center line
 
-   strokeWeight(.25);
-   sigmaGrid (mu, sigma, window_weight, window_height)
-   
-   
+    
+
+   line(map(a, 0, 10, 15, window_weight-16), 155, map(a, 0, 10, 15, window_weight-16), window_height - 16*15); // a line
+   line(map(b, 0, 10, 15, window_weight-16), 155, map(b, 0, 10, 15, window_weight-16), window_height - 16*15); // b line
+
+
    //Akcent Strokes
    strokeWeight(1); // weight of zero line
-   line(16, window_height - 256, window_weight-16, window_height - 256); // zero line
+   line(16, window_height - 16*15, window_weight-16, window_height - 16*15); // zero line
+
 
     //Typography
     noStroke();
     fill('#000000');
-    textFont(SuisseIntl);
+    textFont(SuisseIntlB);
     textStyle(BOLD);
     
     textAlign(LEFT);
@@ -110,11 +132,11 @@ function draw() {
     text('Normal distribution', 16, 40);
     
     textSize(18);
-    text('Z-score calculations', 16, window_height-184);
-    text('Probability', 16, window_height-90);
+    text('Z-score calculations', 16, window_height - 16*10);
+    text('Probability', 16, window_height-16*4);
 
-    textSize(12);
-    text('© YandexPracticum',16, window_height-24);
+    //textSize(12);
+    //text('© YandexPracticum',16, window_height-24);
 
     // nums on graph
 
@@ -122,10 +144,10 @@ function draw() {
     
     textSize(14);
     textStyle(NORMAL);
-    text('density = ' + round(densityNorma, 2), 16, map(densityNorma, 0, .4,  window_height - 256, 160) + 18); // density on graph
+    text('density = ' + round(densityNorma, 2), 16, map(densityNorma, 0, .4,  window_height - 16*15, 160) + 18); // density on graph
     textAlign(CENTER);
     textStyle(NORMAL);
-    text('μ = ' + mu, map(mu, 0, 10, 15, window_weight-16), 125); //mu num on graph
+    text('μ = ' + mu, map(mu, 0, 10, 15, window_weight-16), 120); //mu num on graph
     text('a = ' + a, map(a, 0, 10, 15, window_weight-16), 145); //a num on graph
     text('b = ' + b, map(b, 0, 10, 15, window_weight-16), 145); //a num on graph
     
@@ -133,14 +155,15 @@ function draw() {
     
     textFont('Arial');
     textAlign(LEFT);
-    textSize(18);
+    textSize(14);
     text('μ', 16, 76);
     text('σ', 16, 100);
     
-    text('a', 164, 77);
-    text('b', 164, 101);
+    //textFont(SuisseIntlR);
+    //textSize(18);
 
-    textSize(17);
+    text('a', 165, 77);
+    text('b', 165, 101);
     
     text(mu, 120, 77);
     text(sigma, 120, 101);
@@ -152,12 +175,10 @@ function draw() {
 
     // formulas
 
-    textFont('Times New Roman');
+    //textFont(SuisseIntlR);
 
-    // formulas
-
-    text('z(a) = z(' + a + ') = (a - μ) / σ = (' + a + ' - ' + mu + ') / ' + sigma + ' = ' + round((a-mu)/sigma,2), 16,window_height - 157);
-    text('z(b) = z(' + b + ') = (b - μ) / σ = (' + b + ' - ' + mu + ') / ' + sigma + ' = ' + round((b-mu)/sigma,2), 16,window_height - 130);
+    text('z(a) = z(' + a + ') = (a - μ) / σ = (' + a + ' - ' + mu + ') / ' + sigma + ' = ' + round((a-mu)/sigma,2), 16,window_height - 16*8);
+    text('z(b) = z(' + b + ') = (b - μ) / σ = (' + b + ' - ' + mu + ') / ' + sigma + ' = ' + round((b-mu)/sigma,2), 16,window_height  - 16*6.5);
 
     let p1 = 0;
     
@@ -173,7 +194,7 @@ function draw() {
         p2 = p2 + p;
     }
 
-    text('P = P(b) - P(a)= ' + round(p2/100,4) + ' - ' + round(p1/100,4) + ' = ' + round((p2/100 - p1/100),4), 16,window_height - 60);
+    text('P = P(b) - P(a)= ' + round(p2/100,4) + ' - ' + round(p1/100,4) + ' = ' + round((p2/100 - p1/100),4), 16, window_height - 32);
 
 }
 
@@ -225,18 +246,18 @@ function viz1 (mu, sigma, zScoreSize, window_weight, window_height, start, end,)
     
     beginShape();
     
-    vertex(map(start, 0, 10, 15, window_weight-16), map(0, 0, .2,  window_height - 256, 160));
+    vertex(map(start, 0, 10, 15, window_weight-16), map(0, 0, .2,  window_height - 16*15, 160));
     
 
     for (let i = 0; i <= zScoreSize; i++) {
         zScore = map(i, 0, zScoreSize, start, end);
         density = normalCalc(sigma, mu, zScore);
         let x = map(zScore, 0, 10, 15, window_weight-16);
-        let y = map(density, 0, .4,  window_height - 256, 160);
+        let y = map(density, 0, .4,  window_height - 16*15, 160);
         vertex(x, y);
     }
 
-    vertex(map(end, 0, 10, 15, window_weight-16), map(0, 0, .2,  window_height - 256, 160));
+    vertex(map(end, 0, 10, 15, window_weight-16), map(0, 0, .2,  window_height - 16*15, 160));
 
     endShape();
 }
@@ -244,19 +265,30 @@ function viz1 (mu, sigma, zScoreSize, window_weight, window_height, start, end,)
 function sigmaGrid (mu, sigma, window_weight, window_height) {
 
     x = -10;
+    strokeWeight(1);
 
     for(i = mu - sigma*10; i <= mu + sigma*10; i = i + sigma){
 
         if (round(i, 2) != mu) {
-            line( map(i, 0, 10, 15, window_weight-16), window_height - 240, map(i, 0, 10, 15, window_weight-16), 162);
+            strokeWeight(1);
+            stroke(BorderColor);
+            line(map(i, 0, 10, 15, window_weight-16), window_height - 16*14, map(i, 0, 10, 15, window_weight-16), 162);
             textFont('Arial');
             textSize(11);
             textAlign(CENTER);
-            fill('gray');
-            if (window_weight >= 700) {
-                text(str(x) + 'σ = ' + round(i, 2), map(i, 0, 10, 15, window_weight-16), window_height - 240 + 18);
+            
+            if (window_weight >= 600) {
+                fill(BackgroundColor);
+                noStroke();
+                rect(map(i, 0, 10, 15, window_weight-16)-20, window_height - 16*13 - 10, 40, 30);
+                fill('black');
+                text(str(x) + 'σ = ' + round(i, 2), map(i, 0, 10, 15, window_weight-16), window_height - 16*13);
             } else {
-                text(str(x) + 'σ', map(i, 0, 10, 15, window_weight-16), window_height - 240 + 18);
+                fill(BackgroundColor);
+                noStroke();
+                rect(map(i, 0, 10, 15, window_weight-16)-20, window_height - 16*13- 10, 40, 30);
+                fill('black');
+                text(str(x) + 'σ', map(i, 0, 10, 15, window_weight-16), window_height - 16*13);
             }
            
         }
