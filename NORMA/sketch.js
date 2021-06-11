@@ -194,7 +194,7 @@ function draw() {
         p2 = p2 + p;
     }
 
-    text('P = P(b) - P(a)= ' + round(p2/100,4) + ' - ' + round(p1/100,4) + ' = ' + round((p2/100 - p1/100),4), 16, window_height - 32);
+    text('P = P(b) - P(a) = ' + round(p2/100,4) + ' - ' + round(p1/100,4) + ' = ' + round((p2/100 - p1/100),4), 16, window_height - 32);
 
 }
 
