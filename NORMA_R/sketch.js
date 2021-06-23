@@ -195,7 +195,7 @@ function draw() {
         p2 = p2 + p;
     }
 
-    text('P = ' + round(p1/100,4), 16, window_height - 32);
+    text('P(Rigth) = 1 - P(Left) = ' + round(1 - (p1/100),4), 16, window_height - 32);
 
 }
 
