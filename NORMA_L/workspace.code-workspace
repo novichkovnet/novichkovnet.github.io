@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "font"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "NORMA"
+	}
+}

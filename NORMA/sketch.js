@@ -11,28 +11,27 @@ let ProbColorPoz = '#1BB047';
 let ProbColorNeg = '#000000';
 
 function preload() {
-    SuisseIntlB = loadFont('font/SuisseIntl-SemiBold.otf');
-    SuisseIntlR = loadFont('font/SuisseIntl-Regular.otf');
-    KatexMath = loadFont('font/KaTeX_Math-Italic.ttf');
+    Headers = loadFont('font/YS Display-Bold.ttf');
+    Regular = 'Arial';
   }
 
 function setup() {
     background('white');
 
     //Sliders
-    sliderMu = createSlider(0, zScoreMax, zScoreMax/2, 0.01);
+    sliderMu = createSlider(0, zScoreMax, zScoreMax/2, 0.1);
     sliderMu.position(32, 69);
     sliderMu.addClass('mySliders');
 
-    sliderSigma = createSlider(sigmaMin, sigmaMax, sigmaMin, 0.01);
+    sliderSigma = createSlider(sigmaMin, sigmaMax, sigmaMin, 0.1);
     sliderSigma.position(32, 93);
     sliderSigma.addClass('mySliders');
 
-    slidera = createSlider(0, zScoreMax, 3, 0.01);
+    slidera = createSlider(0, zScoreMax, 3, 0.1);
     slidera.position(180, 69);
     slidera.addClass('mySliders');
 
-    sliderb = createSlider(0, zScoreMax, 7, 0.01);
+    sliderb = createSlider(0, zScoreMax, 7, 0.1);
     sliderb.position(180, 93);
     sliderb.addClass('mySliders');
 }
@@ -123,7 +122,7 @@ function draw() {
     //Typography
     noStroke();
     fill('#000000');
-    textFont(SuisseIntlB);
+    textFont(Headers);
     textStyle(BOLD);
     
     textAlign(LEFT);
@@ -140,7 +139,7 @@ function draw() {
 
     // nums on graph
 
-    textFont('Arial');
+    textFont(Regular);
     
     textSize(14);
     textStyle(NORMAL);
@@ -153,13 +152,13 @@ function draw() {
     
     // slider texts
     
-    textFont('Arial');
+    textFont(Regular);
     textAlign(LEFT);
     textSize(14);
     text('μ', 16, 76);
     text('σ', 16, 100);
     
-    //textFont(SuisseIntlR);
+    //textFont(Regular);
     //textSize(18);
 
     text('a', 165, 77);
@@ -175,7 +174,7 @@ function draw() {
 
     // formulas
 
-    //textFont(SuisseIntlR);
+    //textFont(Regular);
 
     text('z(a) = z(' + a + ') = (a - μ) / σ = (' + a + ' - ' + mu + ') / ' + sigma + ' = ' + round((a-mu)/sigma,2), 16,window_height - 16*8);
     text('z(b) = z(' + b + ') = (b - μ) / σ = (' + b + ' - ' + mu + ') / ' + sigma + ' = ' + round((b-mu)/sigma,2), 16,window_height  - 16*6.5);
@@ -273,7 +272,7 @@ function sigmaGrid (mu, sigma, window_weight, window_height) {
             strokeWeight(1);
             stroke(BorderColor);
             line(map(i, 0, 10, 15, window_weight-16), window_height - 16*14, map(i, 0, 10, 15, window_weight-16), 162);
-            textFont('Arial');
+            textFont(Regular);
             textSize(11);
             textAlign(CENTER);
             
